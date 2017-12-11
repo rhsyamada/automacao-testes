@@ -2,18 +2,18 @@ package br.com.desafio.netshoes.automacaotestes.automation.functionality.zattini
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.com.desafio.netshoes.automacaotestes.automation.pageobjects.zattini.PageProduto;
-import br.com.desafio.netshoes.automacaotestes.automation.pageobjects.zattini.PageSelecaoProdutos;
+import br.com.desafio.netshoes.automacaotestes.automation.pageobjects.zattini.PageProdutoZattini;
+import br.com.desafio.netshoes.automacaotestes.automation.pageobjects.zattini.PageSelecaoProdutosZattini;
 import br.com.desafio.netshoes.automacaotestes.configuration.annotation.Functionality;
 import br.com.desafio.netshoes.automacaotestes.configuration.bean.RepositoryTest;
 
 @Functionality
-public class FunctionalityProduto {
+public class FunctionalityProdutoZattini {
 	@Autowired
-	PageSelecaoProdutos selecaoProdutos;
+	PageSelecaoProdutosZattini selecaoProdutos;
 	
 	@Autowired
-	PageProduto produto;
+	PageProdutoZattini produto;
 	
 	@Autowired
 	RepositoryTest repo;
@@ -24,6 +24,7 @@ public class FunctionalityProduto {
 		selecaoProdutos.clickProduto(0);
 		repo.setCollection("Produto", nomeProduto);
 		repo.setCollection(nomeProduto + ".TextNome", produto.getTextNome());
+		repo.setCollection(nomeProduto + ".TextRef", produto.getTextReferencia());
 		repo.setCollection(nomeProduto + ".TextPreco", produto.getTextPreco());
 		repo.setCollection(nomeProduto + ".TextReferencia", produto.getTextReferencia());
 		produto.clickButtonCor();

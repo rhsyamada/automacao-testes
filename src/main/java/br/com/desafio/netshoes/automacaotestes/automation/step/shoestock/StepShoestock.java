@@ -1,12 +1,12 @@
-package br.com.desafio.netshoes.automacaotestes.automation.step.zattini;
+package br.com.desafio.netshoes.automacaotestes.automation.step.shoestock;
 
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.com.desafio.netshoes.automacaotestes.automation.functionality.zattini.FunctionalityCarrinhoZattini;
-import br.com.desafio.netshoes.automacaotestes.automation.functionality.zattini.FunctionalityHomeZattini;
-import br.com.desafio.netshoes.automacaotestes.automation.functionality.zattini.FunctionalityProdutoZattini;
+import br.com.desafio.netshoes.automacaotestes.automation.functionality.shoestock.FunctionalityCarrinhoShoestock;
+import br.com.desafio.netshoes.automacaotestes.automation.functionality.shoestock.FunctionalityHomeShoestock;
+import br.com.desafio.netshoes.automacaotestes.automation.functionality.shoestock.FunctionalityProdutoShoestock;
 import br.com.desafio.netshoes.automacaotestes.configuration.annotation.Step;
 import cucumber.api.DataTable;
 import cucumber.api.java.pt.Dado;
@@ -14,22 +14,22 @@ import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
 @Step
-public class StepZattini {
+public class StepShoestock {
 	@Autowired
-	FunctionalityHomeZattini home;
+	FunctionalityHomeShoestock home;
 	
 	@Autowired
-	FunctionalityProdutoZattini produto;
+	FunctionalityProdutoShoestock produto;
 		
 	@Autowired
-	FunctionalityCarrinhoZattini carrinho;
+	FunctionalityCarrinhoShoestock carrinho;
 	
-	@Dado("^que acessei o site da Zattini$")
+	@Dado("^que acessei o site da Shoestock$")
 	public void queAcesseiOSiteDaZattini() throws Throwable {
-		home.acessarSiteZattini();
+		home.acessarSiteShoestock();
 	}
 
-	@Quando("^incluir os produtos ao carrinho no site da Zattini$")
+	@Quando("^incluir os produtos ao carrinho no site da Shoestock$")
 	public void incluirOsProdutosAoCarrinhoNoSiteDaZattini(DataTable arg1) throws Throwable {
 		for (Map<String, String> map : arg1.asMaps(String.class, String.class)) {
 			String strProd = map.get("Produto");
@@ -37,7 +37,7 @@ public class StepZattini {
 		}
 	}
 
-	@Entao("^validar os produtos incluidos no carrinho esta na tela de pagamento no site da Zattini$")
+	@Entao("^validar os produtos incluidos no carrinho esta na tela de pagamento no site da Shoestock$")
 	public void validarOsProdutosIncluidosNoCarrinhoEstaNaTelaDePagamentoNoSiteDaZattini() throws Throwable {
 		carrinho.validarProdutoCarrinho();
 	}

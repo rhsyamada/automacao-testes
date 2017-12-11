@@ -11,12 +11,12 @@ import br.com.desafio.netshoes.automacaotestes.configuration.annotation.Page;
 import br.com.desafio.netshoes.core.selenium.command.WebCommand;
 
 @Page
-public class PageProduto extends PageHeader {
+public class PageProdutoZattini extends PageHeaderZattini {
 	@Autowired
 	WebDriver driver;
 
 	@Autowired
-	public PageProduto(WebDriver driver) {
+	public PageProdutoZattini(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 

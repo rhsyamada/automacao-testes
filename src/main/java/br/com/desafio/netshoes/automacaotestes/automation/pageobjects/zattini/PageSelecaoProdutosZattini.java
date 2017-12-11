@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import br.com.desafio.netshoes.automacaotestes.configuration.annotation.Page;
 
 @Page
-public class PageSelecaoProdutos extends PageHeader {
+public class PageSelecaoProdutosZattini extends PageHeaderZattini {
 	@Autowired
 	WebDriver driver;
 
 	@Autowired
-	public PageSelecaoProdutos(WebDriver driver) {
+	public PageSelecaoProdutosZattini(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import br.com.desafio.netshoes.automacaotestes.configuration.annotation.Functionality;
 
 @Functionality
-public class FunctionalityHome {
+public class FunctionalityHomeZattini {
 	@Autowired
 	WebDriver driver;
 	

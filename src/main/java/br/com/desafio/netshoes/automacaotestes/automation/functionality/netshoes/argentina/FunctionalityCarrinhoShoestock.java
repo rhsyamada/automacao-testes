@@ -1,4 +1,4 @@
-package br.com.desafio.netshoes.automacaotestes.automation.functionality.shoestock;
+package br.com.desafio.netshoes.automacaotestes.automation.functionality.netshoes.argentina;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

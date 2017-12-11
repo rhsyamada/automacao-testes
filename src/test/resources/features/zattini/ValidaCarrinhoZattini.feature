@@ -8,11 +8,10 @@ Funcionalidade: Validar carrinho
     Dado que abri o browser CRHOME
     E que acessei o site da Zattini
     Quando incluir os produtos ao carrinho no site da Zattini
-      | Produto    |
-      | <Produto1> |
-      | <Produto2> |
+      | Produto   |
+      | <Produto> |
     Entao validar os produtos incluidos no carrinho esta na tela de pagamento no site da Zattini
 
     Exemplos: 
-      | Produto1 | Produto2 |
-      | Sapato   | Meia     |
+      | Produto |
+      | Toca    |

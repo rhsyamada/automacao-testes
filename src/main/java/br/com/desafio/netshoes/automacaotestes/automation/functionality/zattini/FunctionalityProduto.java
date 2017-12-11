@@ -22,12 +22,14 @@ public class FunctionalityProduto {
 		selecaoProdutos.setInputBusca(nomeProduto);
 		selecaoProdutos.clickButtonPesquisar();
 		selecaoProdutos.clickProduto(0);
-		repo.setCollection(nomeProduto + ".TextDescricao", produto.getTextDescricao());
+		repo.setCollection("Produto", nomeProduto);
 		repo.setCollection(nomeProduto + ".TextNome", produto.getTextNome());
 		repo.setCollection(nomeProduto + ".TextPreco", produto.getTextPreco());
 		repo.setCollection(nomeProduto + ".TextReferencia", produto.getTextReferencia());
 		produto.clickButtonCor();
+		repo.setCollection(nomeProduto + ".TextCor", produto.getTextCor());
 		produto.clickButtonTamanho();
+		repo.setCollection(nomeProduto + ".TextTamanho", produto.getTextTamanho());
 		produto.clickButtonComprar();
 	}
 }

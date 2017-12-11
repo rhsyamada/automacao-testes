@@ -2,9 +2,10 @@ package br.com.desafio.netshoes.automacaotestes.automation.step.zattini;
 
 import java.util.Map;
 
-import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import br.com.desafio.netshoes.automacaotestes.automation.functionality.zattini.FunctionalityCarrinho;
+import br.com.desafio.netshoes.automacaotestes.automation.functionality.zattini.FunctionalityHome;
 import br.com.desafio.netshoes.automacaotestes.automation.functionality.zattini.FunctionalityProduto;
 import br.com.desafio.netshoes.automacaotestes.configuration.annotation.Step;
 import cucumber.api.DataTable;
@@ -15,14 +16,17 @@ import cucumber.api.java.pt.Quando;
 @Step
 public class StepZattini {
 	@Autowired
-	WebDriver driver;
+	FunctionalityHome home;
 	
 	@Autowired
 	FunctionalityProduto produto;
 		
+	@Autowired
+	FunctionalityCarrinho carrinho;
+	
 	@Dado("^que acessei o site da Zattini$")
 	public void queAcesseiOSiteDaZattini() throws Throwable {
-		driver.get("https://www.zattini.com.br/");
+		home.acessarSiteZattini();
 	}
 
 	@Quando("^incluir os produtos ao carrinho no site da Zattini$")
@@ -35,6 +39,6 @@ public class StepZattini {
 
 	@Entao("^validar os produtos incluidos no carrinho esta na tela de pagamento no site da Zattini$")
 	public void validarOsProdutosIncluidosNoCarrinhoEstaNaTelaDePagamentoNoSiteDaZattini() throws Throwable {
-		System.out.println("validar os produtos incluidos no carrinho esta na tela de pagamento no site da Zattini");
+		carrinho.validarProdutoCarrinho();
 	}
 }

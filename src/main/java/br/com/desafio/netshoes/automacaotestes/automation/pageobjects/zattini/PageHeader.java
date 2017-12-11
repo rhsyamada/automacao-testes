@@ -5,13 +5,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class PageHeader {
 	@FindBy(id="search-input")
-	private WebElement busca;
+	WebElement busca;
 	
-	@FindBy(xpath="//i[contains(@cart-title, 'Sacola')]")
-	private WebElement carrinho;
+	@FindBy(xpath="//i[@class='icons i-cart']/..")
+	WebElement carrinho;
 	
 	@FindBy(xpath="//button[text()='Buscar' and @type='submit']") 
-	private WebElement pesquisar;
+	WebElement pesquisar;
 	
 	public void clickButtonPesquisar() {
 		pesquisar.click();

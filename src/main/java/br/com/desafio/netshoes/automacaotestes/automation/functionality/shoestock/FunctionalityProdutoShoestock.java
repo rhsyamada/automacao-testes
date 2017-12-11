@@ -18,7 +18,7 @@ public class FunctionalityProdutoShoestock {
 	@Autowired
 	RepositoryTest repo;
 	
-	public void incluirProdutoCarrinho(String nomeProduto) {
+	public void incluirProdutoCarrinho(String nomeProduto) throws Exception {
 		selecaoProdutos.setInputBusca(nomeProduto);
 		selecaoProdutos.clickButtonPesquisar();
 		selecaoProdutos.clickProduto(1);

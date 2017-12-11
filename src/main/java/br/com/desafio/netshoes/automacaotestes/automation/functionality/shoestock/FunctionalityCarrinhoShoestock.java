@@ -15,7 +15,7 @@ public class FunctionalityCarrinhoShoestock {
 	PageCarrinhoShoestock carrinho;
 
 	public void validarProdutoCarrinho() throws Exception {
-//		carrinho.clickButtonCarrinho();
+		carrinho.clickButtonCarrinho();
 		String nomeProduto = repo.getCollection("Produto", String.class);
 
 		if (!carrinho.getTextCor().equals("Cor: " + repo.getCollection(nomeProduto + ".TextCor", String.class)))

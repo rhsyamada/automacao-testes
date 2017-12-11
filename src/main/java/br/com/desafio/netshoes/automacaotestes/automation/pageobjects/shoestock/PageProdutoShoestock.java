@@ -52,7 +52,7 @@ public class PageProdutoShoestock extends PageHeaderShoestock {
 
 	public String getTextCor() {
 		String xpath = "//ul[@data-type='colors']/parent::*/span[@class='label']";
-		if (new WebCommand(driver).exists(xpath, 1))
+		if (new WebCommand(driver).exists(xpath, 10))
 			return driver.findElement(By.xpath(xpath)).getText();
 		else
 			return null;
@@ -60,7 +60,7 @@ public class PageProdutoShoestock extends PageHeaderShoestock {
 
 	public String getTextTamanho() {
 		String xpath = "//ul[@data-type='sizes']/li[@class='active']";
-		if (new WebCommand(driver).exists(xpath, 1))
+		if (new WebCommand(driver).exists(xpath, 10))
 			return driver.findElement(By.xpath(xpath)).getText();
 		else
 			return null;
@@ -68,14 +68,16 @@ public class PageProdutoShoestock extends PageHeaderShoestock {
 	
 	public void clickButtonTamanho() {
 		String xpath = "//ul[@data-type='sizes']/li[not(contains(normalize-space(@class), 'unavailable'))][1]/a";
-		if (new WebCommand(driver).exists(xpath, 1))
+		if (new WebCommand(driver).exists(xpath, 10))
 			driver.findElement(By.xpath(xpath)).click();
 	}
 
-	public void clickButtonCor() {
+	public void clickButtonCor() throws Exception {
 		String xpath = "//ul[@data-type='colors']/li[not(contains(normalize-space(@class), 'unavailable'))][1]/a";
-		if (new WebCommand(driver).exists(xpath, 1))
+		if (new WebCommand(driver).exists(xpath, 10)) {
 			driver.findElement(By.xpath(xpath)).click();
+			Thread.sleep(5000);
+		}
 	}
 
 	public void clickButtonComprar() {

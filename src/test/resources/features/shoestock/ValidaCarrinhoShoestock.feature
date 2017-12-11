@@ -9,10 +9,10 @@ Funcionalidade: Validar carrinho Shoestock
     Dado que abri o browser CRHOME
     E que acessei o site da Shoestock
     Quando incluir os produtos ao carrinho no site da Shoestock
-      | Produto   |
-      | <Produto> |
+      | Chave   | DiretorioMassa   |
+      | <Chave> | <DiretorioMassa> |
     Entao validar os produtos incluidos no carrinho esta na tela de pagamento no site da Shoestock
 
     Exemplos: 
-      | Produto |
-      | Tenis   |
+      | Chave                     | DiretorioMassa                                                  |
+      | ComprasShoestock_produtos | src/test/resources/massa/shoestock/ValidaCarrinhoShoestock.yaml |

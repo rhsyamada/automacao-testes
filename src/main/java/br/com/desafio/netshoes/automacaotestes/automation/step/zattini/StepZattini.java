@@ -1,5 +1,6 @@
 package br.com.desafio.netshoes.automacaotestes.automation.step.zattini;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import br.com.desafio.netshoes.automacaotestes.automation.functionality.zattini.FunctionalityCarrinhoZattini;
 import br.com.desafio.netshoes.automacaotestes.automation.functionality.zattini.FunctionalityHomeZattini;
 import br.com.desafio.netshoes.automacaotestes.automation.functionality.zattini.FunctionalityProdutoZattini;
+import br.com.desafio.netshoes.automacaotestes.configuration.YamlFileLoader;
 import br.com.desafio.netshoes.automacaotestes.configuration.annotation.Step;
 import cucumber.api.DataTable;
 import cucumber.api.java.pt.Dado;
@@ -29,11 +31,17 @@ public class StepZattini {
 		home.acessarSiteZattini();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Quando("^incluir os produtos ao carrinho no site da Zattini$")
 	public void incluirOsProdutosAoCarrinhoNoSiteDaZattini(DataTable arg1) throws Throwable {
 		for (Map<String, String> map : arg1.asMaps(String.class, String.class)) {
-			String strProd = map.get("Produto");
-			produto.incluirProdutoCarrinho(strProd);
+			String chave = map.get("Chave");
+			String diretorioMassa = map.get("DiretorioMassa");
+			List<String> list = (List<String>) YamlFileLoader.getAttribute(diretorioMassa, chave.split("_"));
+			
+			for (String str : list) {
+				produto.incluirProdutoCarrinho(str);
+			}
 		}
 	}
 

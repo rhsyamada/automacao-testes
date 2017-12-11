@@ -23,6 +23,7 @@ public class ConfigWeb {
 	}
 
 	public void destroyer() {
+		driver.close();
 		driver.quit();
 	}
 

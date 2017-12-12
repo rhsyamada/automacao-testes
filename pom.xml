@@ -20,6 +20,7 @@
 		<info.cukes.version>1.2.5</info.cukes.version>
 		<org.apache.commons.version>3.6</org.apache.commons.version>
 		<snakeyaml.version>1.19</snakeyaml.version>
+		<javax.version>7.0</javax.version>
 	</properties>
 
 	<dependencies>
@@ -67,7 +68,16 @@
 			<artifactId>core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>br.com.desafio.netshoes</groupId>
+			<artifactId>gerador-evidencia</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${javax.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>

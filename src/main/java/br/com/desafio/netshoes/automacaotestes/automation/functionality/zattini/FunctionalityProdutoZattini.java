@@ -6,6 +6,7 @@ import br.com.desafio.netshoes.automacaotestes.automation.pageobjects.zattini.Pa
 import br.com.desafio.netshoes.automacaotestes.automation.pageobjects.zattini.PageSelecaoProdutosZattini;
 import br.com.desafio.netshoes.automacaotestes.configuration.annotation.Functionality;
 import br.com.desafio.netshoes.automacaotestes.configuration.bean.RepositoryTest;
+import br.com.desafio.netshoes.geradorevidencia.evidence.pdf.images.exceptions.ImageExceptions;
 
 @Functionality
 public class FunctionalityProdutoZattini {
@@ -18,7 +19,7 @@ public class FunctionalityProdutoZattini {
 	@Autowired
 	RepositoryTest repo;
 	
-	public void incluirProdutoCarrinho(String nomeProduto) {
+	public void incluirProdutoCarrinho(String nomeProduto) throws ImageExceptions {
 		selecaoProdutos.setInputBusca(nomeProduto);
 		selecaoProdutos.clickButtonPesquisar();
 		selecaoProdutos.clickProduto(0);
